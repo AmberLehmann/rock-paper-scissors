@@ -11,6 +11,7 @@ function getComputerChoice() {
 
 function playRound (playerSelection, computerSelection) {
   if (playerSelection == computerSelection) { //When both are equal its a tie
+    updateScore();
     displayGameStatus(playerSelection, computerSelection, 'tie');
     return 'tie';
   }
@@ -34,7 +35,7 @@ function displayGameStatus(playerChoice, computerChoice, outcome){
   computerChoice = capitalizeWord(computerChoice);
   switch (outcome) {
     case 'tie':
-      display+= 'Great minds think alike. Both of you picked ' + playerChoice;
+      display+= 'Great minds think alike. Both of you picked ' + playerChoice + '.';
       changeDisplay(display);
       break;
     case 'win':
